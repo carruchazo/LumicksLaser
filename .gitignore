@@ -34,3 +34,4 @@
 # Unnecessary VS project files
 *.user
 *.opendb
+Exercise/Exercise/Debug/**
