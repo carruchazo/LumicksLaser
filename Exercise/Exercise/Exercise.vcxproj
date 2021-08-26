@@ -139,7 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CLaserController.cpp" />
     <ClCompile Include="Exercise.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CLaserController.h" />
+    <ClInclude Include="ILaserController.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

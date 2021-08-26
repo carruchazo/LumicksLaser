@@ -6,8 +6,8 @@ namespace NS_Laser_Controller
 	class ILaserController
 	{
 	public:
-		ILaserController();
-		virtual ~ILaserController();
+		ILaserController() {}
+		virtual ~ILaserController() {}
 
 		/// \brief Starts the emission of the laser
 		/// \return true if the command was succesful, false otherwise
