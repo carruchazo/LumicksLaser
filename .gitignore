@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Unnecessary VS project files
+*.user
+*.opendb
