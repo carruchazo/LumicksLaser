@@ -13,17 +13,17 @@ namespace NS_Laser_Controller
 		~CLaserController();
 
 		// Methods from ILaserController
-		virtual bool StartEmission() = 0;
+		virtual bool StartEmission();
 
-		virtual bool StopEmission() = 0;
+		virtual bool StopEmission();
 
-		virtual int GetEmissionState() const = 0;
+		virtual int GetEmissionState() const;
 
-		virtual int GetLaserPower() const = 0;
+		virtual int GetLaserPower() const;
 
-		virtual bool SetLaserPower(int power) = 0;
+		virtual bool SetLaserPower(int power);
 
-		virtual bool KeepAlive() = 0;
+		virtual bool KeepAlive();
 
 	protected:
 		/// \brief Indicates if the laser is emitting
