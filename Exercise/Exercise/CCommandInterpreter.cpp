@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "CCommandInterpreter.h"
 
 namespace NS_Laser_Controller
@@ -5,6 +6,7 @@ namespace NS_Laser_Controller
 	CCommandInterpreter::CCommandInterpreter()
 	{
 		mpLaserController = nullptr;
+		mbSillyModeEnabled = false;
 	}
 
 	CCommandInterpreter::~CCommandInterpreter()
@@ -20,6 +22,12 @@ namespace NS_Laser_Controller
 	{
 		if (mpLaserController != nullptr)
 		{
+			// During silly mode, the commands are backwards
+			if (mbSillyModeEnabled)
+			{
+				std::reverse(wholeCommand.begin(), wholeCommand.end());
+			}
+
 			// Get only the command
 			std::string pipe = "|";
 			std::size_t pos = 0;
@@ -67,6 +75,18 @@ namespace NS_Laser_Controller
 			else if (command.compare("KAL") == 0)
 			{
 				return SendCommand(CommandId::CMD_KEEP_ALIVE);
+			}
+			// Enable silly mode
+			else if (command.compare("ESM") == 0)
+			{
+				mbSillyModeEnabled = true;
+				return "ESM#\n";
+			}
+			// Disable silly mode
+			else if (command.compare("DSM") == 0)
+			{
+				mbSillyModeEnabled = false;
+				return "DSM#\n";
 			}
 			// Unknown command
 			else

@@ -33,6 +33,9 @@ namespace NS_Laser_Controller
 	protected:
 		ILaserController* mpLaserController;
 
+		/// \brief true when silly mode is enabled, false otherwise
+		bool mbSillyModeEnabled;
+
 		/// \brief Calls the appropriate interface function from ILaserController
 		/// return A string containing the response from controller
 		std::string SendCommand(CommandId command, int value = 0);
