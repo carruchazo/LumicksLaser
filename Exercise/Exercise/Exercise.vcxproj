@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CCommandInterpreter.cpp" />
     <ClCompile Include="CLaserController.cpp" />
     <ClCompile Include="Exercise.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CCommandInterpreter.h" />
     <ClInclude Include="CLaserController.h" />
     <ClInclude Include="ILaserController.h" />
   </ItemGroup>
